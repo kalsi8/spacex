@@ -1,0 +1,26 @@
+.launch_card{
+    background: #ffff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    &_content{
+        font-weight: 600;
+        padding: 5px;
+        color: #515894;
+
+        &_label{
+            color: black;
+            
+        }
+        &_value{
+            color: #515894;
+            font-weight: 300;
+        }
+    }
+    &_image{
+        background: #f2f2f2;
+        width: 100%;
+        height: 250px;
+    }
+}

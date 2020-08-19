@@ -1,0 +1,22 @@
+.filter_card{
+    &-label{
+        text-align: center;
+        border-bottom: solid black 1px;
+        margin: 10px;
+    }
+    &-items{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 50px;
+        grid-row-gap: 10px;
+    }
+    &-button{
+        background: #c5e09b;
+        padding: 2px 10px;
+        border-radius: 5px;
+        
+        &--active{
+            background-color: #7aba01;
+        }
+    }
+}

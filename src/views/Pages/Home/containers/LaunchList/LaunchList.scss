@@ -1,0 +1,10 @@
+.list_wrapper{
+    display: grid;
+    grid-gap: 20px;
+    @media (min-width: 700px) {
+        grid-template-columns: auto auto;
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: auto auto auto auto;
+    }
+}
