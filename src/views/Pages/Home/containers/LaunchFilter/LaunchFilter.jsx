@@ -24,8 +24,8 @@ function LaunchFilter({
         <div className={'filter'}>
             <h1>Filters:</h1>
             <FilterCard value={launchYear} filterName ="Launch Year" list={years} onChange={setLaunchYear}/>
-            <FilterCard value={launchSuccess} filterName ="Sucessful Launch" list={["True","False"]} onChange={setLaunchSuccess}/>
-            <FilterCard value={landSuccess} filterName ="Sucessful Lending" list={["True","False"]} onChange={setLandSuccess}/>
+            <FilterCard value={launchSuccess} filterName ="Sucessful Launch" list={['true','false']} onChange={setLaunchSuccess}/>
+            <FilterCard value={landSuccess} filterName ="Sucessful Lending" list={['true','false']} onChange={setLandSuccess}/>
         </div>
     )
 }
