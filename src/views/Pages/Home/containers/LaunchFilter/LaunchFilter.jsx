@@ -5,7 +5,7 @@ import './LaunchFilter.scss'
 
 const years = (function(start,end) {
     let result = []
-    while(start < end){
+    while(start <= end){
         result.push(start)
         start++;
     }
