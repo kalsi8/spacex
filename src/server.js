@@ -4,12 +4,15 @@ import express from 'express';
 import { renderToString } from 'react-dom/server';
 import Main from './main';
 import configureStore from './state/store';
+import compression from 'compression';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
-console.log(process.env.RAZZLE_PUBLIC_DIR,process.env.NODE_ENV)
+
+
 const server = express();
 server
   .disable('x-powered-by')
+  .use(compression())
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
     const context = {};
@@ -35,20 +38,21 @@ server
             ? `<link rel="stylesheet" href="${assets.client.css}">`
             : ''
         }
-        ${
-          process.env.NODE_ENV === 'production'
-            ? `<script src="${assets.client.js}" defer></script>`
-            : `<script src="${assets.client.js}" defer crossorigin></script>`
-        }
+    </head>
+    <body>
+        <div id="root">${markup}</div>
+
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
             /</g,
             '\\u003c'
           )}
         </script>
-    </head>
-    <body>
-        <div id="root">${markup}</div>
+        ${
+          process.env.NODE_ENV === 'production'
+            ? `<script src="${assets.client.js}" defer></script>`
+            : `<script src="${assets.client.js}" defer crossorigin></script>`
+        }
     </body>
 </html>`
       );
