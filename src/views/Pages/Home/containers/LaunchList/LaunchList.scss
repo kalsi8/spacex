@@ -1,10 +1,10 @@
-.list_wrapper{
+.launch_list{
     display: grid;
     grid-gap: 20px;
     @media (min-width: 700px) {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width: 1024px) {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: repeat(4, 1fr);
     }
 }

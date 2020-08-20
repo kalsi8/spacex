@@ -7,7 +7,7 @@ function LaunchList({fetchLaunches,launchYear,landSuccess,launchSuccess,launches
         fetchLaunches(landSuccess,launchYear,launchSuccess);
     }, [launchYear,landSuccess,launchSuccess])
     return (
-        <div className={'list_wrapper'}>
+        <div className={'launch_list'}>
             {
                 launches.map(({flight_number, mission_name,mission_id,launch_year,launch_success, links: {mission_patch_small}}) => {
                     return <LaunchCard

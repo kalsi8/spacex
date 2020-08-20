@@ -6,6 +6,7 @@ function FilterCard({filterName, list, value, onChange}) {
     const onFilterClick = (event) => {
         event.stopPropagation()
         const ds = event.target.dataset
+        if (!ds.click) return;
         if(ds.value == value) {
             onChange('')
             return
@@ -22,6 +23,7 @@ function FilterCard({filterName, list, value, onChange}) {
                         <div 
                             className={`${'filter_card-button'} ${iValue == value? 'filter_card-button--active' : ''}`} 
                             data-value={iValue} 
+                            data-click={true} 
                             key={iValue}>
                                 {iValue}
                         </div>
