@@ -4,6 +4,8 @@
     flex-direction: column;
     padding: 10px;
     border-radius: 10px;
+    max-width: 360px;
+    margin: auto;
     &-content{
         font-weight: 600;
         padding: 5px;
